@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<PARTIDA>
+  <CORREDOR1>
+    <POSICAO>
+      <X>-2.5</X>
+      <Y>4.5</Y>
+    </POSICAO>
+    <COR>
+      <R>1</R>
+      <G>0</G>
+      <B>0</B>
+    </COR>
+    <VOLTAS>8</VOLTAS>
+  </CORREDOR1>
+  <CORREDOR2>
+    <POSICAO>
+      <X>-8.1</X>
+      <Y>8</Y>
+    </POSICAO>
+    <COR>
+      <R>0.1320755</R>
+      <G>0.5283019</G>
+      <B>0.2032102</B>
+    </COR>
+    <VOLTAS>4</VOLTAS>
+  </CORREDOR2>
+  <MAXIMO_VOLTAS>10</MAXIMO_VOLTAS>
+</PARTIDA>

@@ -18,7 +18,7 @@ public class TesteXML : MonoBehaviour
         {
             try
             {
-                string xml = fabricaXml.LerXMLDeArquivo(Directory.GetCurrentDirectory() + PARTIDA_XML_CAMINHO);
+                string xml = fabricaXml.LerXMLDeArquivo(Directory.GetCurrentDirectory() + '/' + PARTIDA_XML_CAMINHO);
                 partida = fabricaXml.ConverterXMLParaPartida(xml);
                 print("Carregado!");
             }
@@ -31,7 +31,7 @@ public class TesteXML : MonoBehaviour
         {
             try
             {
-                fabricaXml.EscreverXML(Directory.GetCurrentDirectory() + PARTIDA_XML_CAMINHO, partida);
+                fabricaXml.EscreverXML(Directory.GetCurrentDirectory() + '/' + PARTIDA_XML_CAMINHO, partida);
                 print("Salvo!");
             }
             catch (Exception e)
