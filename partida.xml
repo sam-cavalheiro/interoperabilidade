@@ -2,12 +2,12 @@
 <PARTIDA>
   <CORREDOR1>
     <POSICAO>
-      <X>0</X>
+      <X>-4.33</X>
       <Y>0.01</Y>
     </POSICAO>
     <COR>
       <R>0</R>
-      <G>0.5798319</G>
+      <G>1</G>
       <B>0</B>
     </COR>
     <VOLTAS>0</VOLTAS>
@@ -20,7 +20,7 @@
     <COR>
       <R>0</R>
       <G>0</G>
-      <B>0.3655461</B>
+      <B>0.9705884</B>
     </COR>
     <VOLTAS>0</VOLTAS>
   </CORREDOR2>

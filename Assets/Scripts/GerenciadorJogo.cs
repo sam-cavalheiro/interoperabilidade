@@ -7,17 +7,13 @@ public class GerenciadorJogo : MonoBehaviour
 {
     const string PARTIDA_XML_CAMINHO = "partida.xml";
 
-    ControladorCorredor jogador1;
-    ControladorCorredor jogador2;
-
     void Start()
     {
-        ControladorCorredor[] ccs = FindObjectsOfType<ControladorCorredor>();
-        jogador1 = ccs[0];
-        jogador2 = ccs[1];
+        ControladorCorredor[] jogadores = FindObjectsOfType<ControladorCorredor>();
 
-        jogador1.Setup(true);
-        jogador2.Setup(false);
+        jogadores[0].transform.localScale += Vector3.up;
+        jogadores[0].Setup(true);
+        jogadores[1].Setup(false);
     }
 
     void OnApplicationQuit()

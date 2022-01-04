@@ -12,6 +12,8 @@ public class MenuJogo : MonoBehaviour
     [SerializeField] int cenaJogoId = 1;
     [SerializeField] GameObject selecaoCorHolder;
     [SerializeField] GameObject partidaEncontradaHolder;
+    [SerializeField] SelecaoCor selecaoCorJogador1;
+    [SerializeField] SelecaoCor selecaoCorJogador2;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,9 @@ public class MenuJogo : MonoBehaviour
 
     public void Comando_ComecarNovaPartida()
     {
-        SelecaoCor[] selecaoCores = FindObjectsOfType<SelecaoCor>();
-
         Partida partida = new Partida();
-        partida.Corredor1.Cor = selecaoCores[0].GetColor();
-        partida.Corredor2.Cor = selecaoCores[1].GetColor();
+        partida.Corredor1.Cor = selecaoCorJogador1.GetColor();
+        partida.Corredor2.Cor = selecaoCorJogador2.GetColor();
 
         int.TryParse(FindObjectOfType<TMPro.TMP_InputField>().text, out int voltas);
         print(">>>> voltas: " + voltas);

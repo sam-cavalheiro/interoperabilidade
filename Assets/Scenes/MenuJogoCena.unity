@@ -2351,6 +2351,8 @@ MonoBehaviour:
   cenaJogoId: 1
   selecaoCorHolder: {fileID: 661612194}
   partidaEncontradaHolder: {fileID: 732628413}
+  selecaoCorJogador1: {fileID: 1611442811}
+  selecaoCorJogador2: {fileID: 1081736225}
 --- !u!4 &650127599
 Transform:
   m_ObjectHideFlags: 0
