@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class FabricaXML
 {
-    // TODO Testar em build
     public void EscreverXML(string caminho, Partida partida)
     {
         IFormatProvider floatFormat = System.Globalization.CultureInfo.InvariantCulture;
@@ -42,6 +41,9 @@ public class FabricaXML
         writer.WriteElementString("B", corredorCor1.b.ToString(floatFormat));
         writer.WriteEndElement();
 
+        writer.WriteElementString("ANGULO", corredor1.Angulo.ToString(floatFormat));
+        writer.WriteElementString("VELOCIDADE", corredor1.Velocidade.ToString(floatFormat));
+
         writer.WriteElementString("VOLTAS", corredor1.VoltasRealizadas.ToString());
 
         writer.WriteEndElement();
@@ -60,6 +62,9 @@ public class FabricaXML
         writer.WriteElementString("G", corredorCor2.g.ToString(floatFormat));
         writer.WriteElementString("B", corredorCor2.b.ToString(floatFormat));
         writer.WriteEndElement();
+
+        writer.WriteElementString("ANGULO", corredor2.Angulo.ToString(floatFormat));
+        writer.WriteElementString("VELOCIDADE", corredor2.Velocidade.ToString(floatFormat));
 
         writer.WriteElementString("VOLTAS", corredor2.VoltasRealizadas.ToString());
 
@@ -116,6 +121,12 @@ public class FabricaXML
                         atualCorredor.Cor.b = xtr.ReadElementContentAsFloat();
                         atualCorredor.Cor.a = 1f;
                         break;
+
+                    case "ANGULO":
+                        atualCorredor.Angulo = xtr.ReadElementContentAsFloat(); break;
+
+                    case "VELOCIDADE":
+                        atualCorredor.Velocidade = xtr.ReadElementContentAsFloat(); break;
 
                     case "VOLTAS":
                         atualCorredor.VoltasRealizadas = xtr.ReadElementContentAsInt();
