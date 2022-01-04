@@ -2,26 +2,30 @@
 <PARTIDA>
   <CORREDOR1>
     <POSICAO>
-      <X>-4.33</X>
-      <Y>0.01</Y>
+      <X>-24.27314</X>
+      <Y>-31.0841</Y>
     </POSICAO>
     <COR>
       <R>0</R>
       <G>1</G>
       <B>0</B>
     </COR>
+    <ANGULO>189.7708</ANGULO>
+    <VELOCIDADE>0</VELOCIDADE>
     <VOLTAS>0</VOLTAS>
   </CORREDOR1>
   <CORREDOR2>
     <POSICAO>
-      <X>4.97</X>
-      <Y>0.01</Y>
+      <X>-8.041607</X>
+      <Y>-23.07883</Y>
     </POSICAO>
     <COR>
       <R>0</R>
-      <G>0</G>
-      <B>0.9705884</B>
+      <G>1</G>
+      <B>1</B>
     </COR>
+    <ANGULO>261.4113</ANGULO>
+    <VELOCIDADE>0</VELOCIDADE>
     <VOLTAS>0</VOLTAS>
   </CORREDOR2>
   <MAXIMO_VOLTAS>1</MAXIMO_VOLTAS>
