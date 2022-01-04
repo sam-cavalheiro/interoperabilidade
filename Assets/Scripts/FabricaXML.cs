@@ -90,8 +90,8 @@ public class FabricaXML
         XmlTextReader xtr = new XmlTextReader(stream);
 
         Partida p = new Partida();
-        p.Corredor1 = new Corredor();
-        p.Corredor2 = new Corredor();
+        //p.Corredor1 = new Corredor();
+        //p.Corredor2 = new Corredor();
 
         Corredor atualCorredor = p.Corredor1;
 
@@ -113,7 +113,9 @@ public class FabricaXML
                     case "G":
                         atualCorredor.Cor.g = xtr.ReadElementContentAsFloat(); break;
                     case "B":
-                        atualCorredor.Cor.b = xtr.ReadElementContentAsFloat(); break;
+                        atualCorredor.Cor.b = xtr.ReadElementContentAsFloat();
+                        atualCorredor.Cor.a = 1f;
+                        break;
 
                     case "VOLTAS":
                         atualCorredor.VoltasRealizadas = xtr.ReadElementContentAsInt();
