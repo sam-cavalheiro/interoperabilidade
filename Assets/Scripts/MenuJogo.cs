@@ -15,6 +15,8 @@ public class MenuJogo : MonoBehaviour
     [SerializeField] SelecaoCor selecaoCorJogador1;
     [SerializeField] SelecaoCor selecaoCorJogador2;
 
+    string voltasInputFieldValor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,12 +36,12 @@ public class MenuJogo : MonoBehaviour
         partida.Corredor1.Cor = selecaoCorJogador1.GetColor();
         partida.Corredor2.Cor = selecaoCorJogador2.GetColor();
 
-        int.TryParse(FindObjectOfType<TMPro.TMP_InputField>().text, out int voltas);
-        print(">>>> voltas: " + voltas);
+        int.TryParse(voltasInputFieldValor, out int voltas);
 
         partida.MaximoVoltas = Mathf.Max(voltas, 1);
 
         DadosJogo.partida = partida;
+        DadosJogo.carregouPorArquivo = false;
         SceneManager.LoadScene(cenaJogoId);
     }
 
@@ -57,5 +59,10 @@ public class MenuJogo : MonoBehaviour
     {
         selecaoCorHolder.SetActive(true);
         partidaEncontradaHolder.SetActive(false);
+    }
+
+    public void OnInputFieldValueChanged(string text)
+    {
+        voltasInputFieldValor = text;
     }
 }

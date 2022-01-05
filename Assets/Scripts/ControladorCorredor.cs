@@ -10,16 +10,9 @@ public class ControladorCorredor : MonoBehaviour
     public float velocidadeRotacao = 1f;
     public float velocidadeMovimentoMaxima = 10f;
 
-    //Rigidbody2D rb;
-
     Corredor corredor;
     string inputPrefix;
     float velocidadeMovimento;
-
-    /*void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }*/
 
     public void Setup(bool jogadorUm)
     {
@@ -52,8 +45,6 @@ public class ControladorCorredor : MonoBehaviour
         corredor.Angulo = transform.eulerAngles.z;
         corredor.Velocidade = velocidadeMovimento;
 
-        // TODO Dar um jeito de atualizar as voltas realizadas
-
         // Movimentação
         //rb.AddForce(transform.up * Input.GetAxis(inputPrefix + "Vertical") * aceleracao);
         transform.eulerAngles -= Vector3.forward * Input.GetAxis(inputPrefix + "Horizontal") * velocidadeRotacao * Time.deltaTime;
@@ -70,6 +61,15 @@ public class ControladorCorredor : MonoBehaviour
         {
             //velocidadeMovimento = Mathf.Max(velocidadeMovimento - Time.deltaTime, 0f);
             velocidadeMovimento = Mathf.Clamp(velocidadeMovimento - desaceleracao * Time.deltaTime, 0f, velocidadeMovimentoMaxima);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.CompareTag("Chegada"))
+        {
+            if (++corredor.VoltasRealizadas > DadosJogo.partida.MaximoVoltas)
+                FindObjectOfType<GerenciadorJogo>().FimDeJogo();
         }
     }
 }

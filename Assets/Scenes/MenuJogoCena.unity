@@ -2353,6 +2353,7 @@ MonoBehaviour:
   partidaEncontradaHolder: {fileID: 732628413}
   selecaoCorJogador1: {fileID: 1611442811}
   selecaoCorJogador2: {fileID: 1081736225}
+  voltasInputFieldValor: 
 --- !u!4 &650127599
 Transform:
   m_ObjectHideFlags: 0
@@ -5364,7 +5365,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 650127598}
+        m_TargetAssemblyTypeName: MenuJogo, Assembly-CSharp
+        m_MethodName: OnInputFieldValueChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
