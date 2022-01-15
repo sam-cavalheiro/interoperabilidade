@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class GerenciadorJogo : MonoBehaviour
 {
-    const string PARTIDA_XML_CAMINHO = "partida.xml";
-
     [SerializeField] ControladorCorredor jogador1;
     [SerializeField] ControladorCorredor jogador2;
     [SerializeField] int fimDeJogoCenaId = 2;
@@ -24,13 +22,28 @@ public class GerenciadorJogo : MonoBehaviour
 
     public void FimDeJogo()
     {
-        File.Delete(Directory.GetCurrentDirectory() + '/' + PARTIDA_XML_CAMINHO);
+        if (DadosJogo.ARMAZENANDO_JSON)
+        {
+            File.Delete("partida.json");
+        }
+        else
+        {
+            File.Delete("partida.xml");
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(fimDeJogoCenaId);
     }
 
     void OnApplicationQuit()
     {
-        FabricaXML fabricaXml = new FabricaXML();
-        fabricaXml.EscreverXML(Directory.GetCurrentDirectory() + '/' + PARTIDA_XML_CAMINHO, DadosJogo.partida);
+        if (DadosJogo.ARMAZENANDO_JSON)
+        {
+            FabricaJSON fabricaJson = new FabricaJSON();
+            fabricaJson.EscreverJSON(DadosJogo.partida, "partida.json");
+        }
+        else
+        {
+            FabricaXML fabricaXml = new FabricaXML();
+            fabricaXml.EscreverXML("partida.xml", DadosJogo.partida);
+        }
     }
 }

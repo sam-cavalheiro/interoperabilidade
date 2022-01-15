@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-[System.Serializable]
 public class Partida
 {
     public Corredor Corredor1;

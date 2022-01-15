@@ -19,10 +19,10 @@ public class FabricaXML
 
         Corredor corredor1 = partida.Corredor1;
         Corredor corredor2 = partida.Corredor2;
-        Vector2 corredorPosicao1 = corredor1.Posicao;
-        Vector2 corredorPosicao2 = corredor2.Posicao;
-        Color corredorCor1 = corredor1.Cor;
-        Color corredorCor2 = corredor2.Cor;
+        Vector2 corredorPosicao1 = corredor1.Posicao.ToVector2();
+        Vector2 corredorPosicao2 = corredor2.Posicao.ToVector2();
+        CleanColor corredorCor1 = corredor1.Cor;
+        CleanColor corredorCor2 = corredor2.Cor;
 
         writer.WriteStartElement("PARTIDA");
 
@@ -118,9 +118,7 @@ public class FabricaXML
                     case "G":
                         atualCorredor.Cor.g = xtr.ReadElementContentAsFloat(); break;
                     case "B":
-                        atualCorredor.Cor.b = xtr.ReadElementContentAsFloat();
-                        atualCorredor.Cor.a = 1f;
-                        break;
+                        atualCorredor.Cor.b = xtr.ReadElementContentAsFloat(); break;
 
                     case "ANGULO":
                         atualCorredor.Angulo = xtr.ReadElementContentAsFloat(); break;

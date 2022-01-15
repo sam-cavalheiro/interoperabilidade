@@ -29,19 +29,19 @@ public class ControladorCorredor : MonoBehaviour
 
         if (DadosJogo.carregouPorArquivo)
         {
-            transform.position = corredor.Posicao;
+            transform.position = corredor.Posicao.ToVector2();
             velocidadeMovimento = corredor.Velocidade;
             transform.eulerAngles = Vector3.forward * corredor.Angulo;
         }
 
-        GetComponent<SpriteRenderer>().color = corredor.Cor;
+        GetComponent<SpriteRenderer>().color = corredor.Cor.ToColor();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Atualizar as informações pertinentes do Corredor para salvar arquivo
-        corredor.Posicao = transform.position;
+        corredor.Posicao = new CleanVector2(transform.position);
         corredor.Angulo = transform.eulerAngles.z;
         corredor.Velocidade = velocidadeMovimento;
 
