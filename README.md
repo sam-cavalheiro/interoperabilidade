@@ -1,6 +1,6 @@
 # Interoperabilidade
 
-Trabalho realizado para a disciplina Interoperabilidade Aplicada a Jogos, do Curso Superior em Tecnologia em Jogos Digitais no Instituto de Educação, Ciência e Tecnologia do Rio de Janeiro, Campus Eng. Paulo de Frontin.
+Trabalho realizado para a disciplina "Interoperabilidade Aplicada a Jogos", do **Curso Superior em Tecnologia em Jogos Digitais** no **IFRJ CEPF** (Instituto de Educação, Ciência e Tecnologia do Rio de Janeiro, Campus Eng. Paulo de Frontin).
 
 ## Projeto
 
